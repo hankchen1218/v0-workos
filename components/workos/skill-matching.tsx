@@ -136,7 +136,7 @@ export function SkillMatching() {
         <CardContent>
           <div className="flex flex-wrap gap-2">
             {["React", "TypeScript", "GraphQL", "Problem Solving", "Communication"].map((skill) => (
-              <span key={skill} className="rounded-md bg-primary/20 px-3 py-1.5 text-sm text-primary">
+              <span key={skill} className="rounded-md border  px-3 py-1.5 text-sm text-muted-foreground">
                 {skill}
               </span>
             ))}
@@ -391,19 +391,19 @@ export function SkillMatching() {
 
                       {/* Skills */}
                       <td className="px-4 py-4">
-                        <div className="flex flex-wrap gap-1">
+                        <div className="flex flex-wrap gap-1.5">
                           {match.skillsMatched.slice(0, 3).map((skill) => (
                             <span
                               key={skill}
-                              className="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-xs text-green-700 font-medium"
+                              className="border inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs text-muted-foreground font-medium"
                             >
-                              <CheckCircle2 className="h-3 w-3" />
+                              <CheckCircle2 className="h-3 w-3 text-green-500" />
                               {skill}
                             </span>
                           ))}
                           {match.skillsMissing.length > 0 && (
-                            <span className="inline-flex items-center gap-1 rounded-full bg-red-100 px-2 py-0.5 text-xs text-red-700 font-medium">
-                              <XCircle className="h-3 w-3" />
+                            <span className="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs text-muted-foreground font-medium">
+                              <XCircle className="h-3 w-3 text-red-500" />
                               {match.skillsMissing.length} missing
                             </span>
                           )}
@@ -413,7 +413,7 @@ export function SkillMatching() {
                       {/* Match score */}
                       <td className="px-4 py-4">
                         <div className="flex items-center gap-2">
-                          <div className="h-2 w-16 rounded-full bg-secondary">
+                          <div className="h-0.5 w-16 rounded-full bg-secondary">
                             <div
                               className={cn(
                                 "h-full rounded-full",
@@ -439,7 +439,7 @@ export function SkillMatching() {
 
                       {/* Growth potential */}
                       <td className="px-4 py-4">
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center justify-center gap-2">
                           <TrendingUp
                             className={cn(
                               "h-4 w-4",
@@ -457,9 +457,9 @@ export function SkillMatching() {
                         <span
                           className={cn(
                             "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium",
-                            match.availability === "Available" && "bg-primary/20 text-primary",
-                            match.availability === "Busy" && "bg-amber-500/20 text-amber-400",
-                            match.availability === "On Leave" && "bg-muted text-muted-foreground",
+                            match.availability === "Available" && "border text-muted-foreground",
+                            match.availability === "Busy" && "border text-muted-foreground",
+                            match.availability === "On Leave" && "border text-muted-foreground",
                           )}
                         >
                           <span

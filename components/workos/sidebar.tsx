@@ -29,9 +29,7 @@ export function WorkOSSidebar({ activeView, onViewChange }: SidebarProps) {
       <div className="flex h-14 items-center justify-between border-b border-border px-4">
         {!collapsed && (
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary">
-              <span className="text-sm font-bold text-primary-foreground">W</span>
-            </div>
+            <img src="/workos-logo.png" alt="WorkOS" className="h-8 w-auto" />
             <span className="font-semibold text-foreground">WorkOS</span>
           </div>
         )}
@@ -54,7 +52,7 @@ export function WorkOSSidebar({ activeView, onViewChange }: SidebarProps) {
                 className={cn(
                   "flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors",
                   activeView === item.id
-                    ? "bg-sidebar-accent text-primary"
+                    ? "bg-sidebar-accent text-foreground"
                     : "text-muted-foreground hover:bg-sidebar-accent hover:text-foreground",
                 )}
               >

@@ -21,7 +21,7 @@ export function EmployeeCard({ employee, selected, onClick, onDoubleClick }: Emp
       onDoubleClick={onDoubleClick}
       className={cn(
         "flex w-full items-center gap-3 rounded-lg border p-3 text-left transition-colors",
-        selected ? "border-primary bg-primary/10" : "border-border bg-card hover:border-muted-foreground",
+        selected ? "border-primary bg-primary/5" : "border-border bg-card hover:border-muted-foreground",
       )}
     >
       <Avatar className="h-10 w-10">
@@ -38,8 +38,8 @@ export function EmployeeCard({ employee, selected, onClick, onDoubleClick }: Emp
         <p className="text-xs text-muted-foreground">{employee.role}</p>
       </div>
       <div className="text-right">
-        <p className="text-sm font-medium text-primary">{avgProficiency}%</p>
         <div className="flex items-center justify-end gap-1">
+          <p className="text-sm font-medium text-muted-foreground">{avgProficiency}%</p>
           {employee.skills.filter((s) => s.trend === "up").length > 2 ? (
             <TrendingUp className="h-3 w-3 text-primary" />
           ) : employee.skills.filter((s) => s.trend === "down").length > 2 ? (

@@ -18,10 +18,10 @@ export function SkillProgressItem({ skill }: SkillProgressItemProps) {
             <span
               className={cn(
                 "rounded-full px-2 py-0.5 text-xs",
-                skill.category === "Technical" && "bg-blue-500/20 text-blue-400",
-                skill.category === "Soft" && "bg-purple-500/20 text-purple-400",
-                skill.category === "Leadership" && "bg-amber-500/20 text-amber-400",
-                skill.category === "Domain" && "bg-cyan-500/20 text-cyan-400",
+                skill.category === "Technical" && "border text-muted-foreground",
+                skill.category === "Soft" && "border text-muted-foreground",
+                skill.category === "Leadership" && "border text-muted-foreground",
+                skill.category === "Domain" && "border text-muted-foreground",
               )}
             >
               {skill.category}
@@ -35,7 +35,7 @@ export function SkillProgressItem({ skill }: SkillProgressItemProps) {
         </div>
 
         {/* Progress bar */}
-        <div className="relative h-2 rounded-full bg-secondary">
+        <div className="relative h-0.5 rounded-full bg-secondary">
           <div
             className="absolute left-0 top-0 h-full rounded-full bg-primary transition-all"
             style={{ width: `${skill.proficiency}%` }}
@@ -52,7 +52,7 @@ export function SkillProgressItem({ skill }: SkillProgressItemProps) {
           <span>Current: {skill.proficiency}%</span>
           {skill.targetProficiency && (
             <span>
-              Target: {skill.targetProficiency}% {gap > 0 && <span className="text-amber-400">(+{gap}% needed)</span>}
+              Target: {skill.targetProficiency}% {gap > 0 && <span className="text-amber-700">(+{gap}% needed)</span>}
             </span>
           )}
         </div>

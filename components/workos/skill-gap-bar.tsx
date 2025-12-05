@@ -17,18 +17,26 @@ export function SkillGapBar({ skill, current, required, priority }: SkillGapBarP
         <div className="flex items-center gap-2">
           <span
             className={cn(
-              "rounded-full px-2 py-0.5 text-xs",
-              priority === "High" && "bg-red-500/20 text-red-400",
-              priority === "Medium" && "bg-yellow-500/20 text-yellow-400",
-              priority === "Low" && "bg-blue-500/20 text-blue-400",
+              "flex items-center rounded-full px-2 py-0.5 text-xs",
+              priority === "High" && "border text-muted-foreground",
+              priority === "Medium" && "border text-muted-foreground",
+              priority === "Low" && "border text-muted-foreground",
             )}
           >
+            <div
+              className={cn(
+                "mr-1.5 size-1 rounded-full",
+                priority === "High" && "bg-red-500",
+                priority === "Medium" && "bg-yellow-500",
+                priority === "Low" && "bg-blue-500",
+              )}
+            />
             {priority}
           </span>
           <span className="text-muted-foreground">Gap: {gap}%</span>
         </div>
       </div>
-      <div className="relative h-2 rounded-full bg-secondary">
+      <div className="relative h-1 rounded-full bg-secondary">
         <div
           className="absolute left-0 top-0 h-full rounded-full bg-primary transition-all"
           style={{ width: `${current}%` }}

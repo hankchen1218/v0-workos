@@ -16,7 +16,7 @@ interface LearningPathCardProps {
 export function LearningPathCard({ path, onStart, onContinue, onClick }: LearningPathCardProps) {
   return (
     <Card
-      className="border-border bg-card overflow-hidden cursor-pointer hover:border-primary/50 transition-colors"
+      className="border-border bg-card overflow-hidden cursor-pointer hover:border-muted-foreground transition-colors"
       onClick={onClick}
     >
       <CardHeader className="pb-3">
@@ -26,12 +26,17 @@ export function LearningPathCard({ path, onStart, onContinue, onClick }: Learnin
               <h3 className="font-medium text-foreground">{path.title}</h3>
               <span
                 className={cn(
-                  "rounded-full px-2 py-0.5 text-xs",
-                  path.status === "Completed" && "bg-primary/20 text-primary",
-                  path.status === "In Progress" && "bg-blue-500/20 text-blue-400",
-                  path.status === "Not Started" && "bg-muted text-muted-foreground",
+                  "flex items-center rounded-full border px-2 py-0.5 text-xs text-muted-foreground",
                 )}
               >
+                <div
+                  className={cn(
+                    "mr-1.5 size-1.5 rounded-full",
+                    path.status === "Completed" && "bg-green-500",
+                    path.status === "In Progress" && "bg-blue-500",
+                    path.status === "Not Started" && "bg-muted-foreground",
+                  )}
+                />
                 {path.status}
               </span>
             </div>
@@ -59,7 +64,7 @@ export function LearningPathCard({ path, onStart, onContinue, onClick }: Learnin
             <span className="text-muted-foreground">Progress</span>
             <span className="text-foreground font-medium">{path.progress}%</span>
           </div>
-          <div className="h-2 rounded-full bg-secondary">
+          <div className="h-0.5 rounded-full bg-secondary">
             <div
               className={cn(
                 "h-full rounded-full transition-all",
@@ -82,7 +87,8 @@ export function LearningPathCard({ path, onStart, onContinue, onClick }: Learnin
               e.stopPropagation()
               onContinue?.()
             }}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+            variant="outline" 
+            className="w-full border-border text-foreground hover:bg-blue-500/5 hover:text-blue-500 bg-transparent"
           >
             <Play className="mr-2 h-4 w-4" />
             Continue Learning
@@ -94,7 +100,7 @@ export function LearningPathCard({ path, onStart, onContinue, onClick }: Learnin
               onStart?.()
             }}
             variant="outline"
-            className="w-full border-border text-foreground hover:bg-secondary bg-transparent"
+            className="w-full border-border text-foreground hover:bg-blue-500/5 hover:text-blue-500 bg-transparent"
           >
             <BookOpen className="mr-2 h-4 w-4" />
             Start Course

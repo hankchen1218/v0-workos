@@ -23,7 +23,7 @@ export default function WorkOSApp() {
     },
     matching: {
       title: "Skill Matching",
-      subtitle: "Find the best team members for your project",
+      subtitle: "",
       component: SkillMatching,
     },
   }
