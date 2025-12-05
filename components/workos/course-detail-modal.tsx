@@ -96,7 +96,7 @@ export function CourseDetailModal({ course, open, onClose, onEnroll }: CourseDet
                   1,234 enrolled
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Star className="h-4 w-4 text-amber-400" />
+                  <Star className="h-4 w-4 text-amber-600" />
                   4.8 (256 reviews)
                 </span>
               </div>
@@ -109,7 +109,7 @@ export function CourseDetailModal({ course, open, onClose, onEnroll }: CourseDet
                   <span className="text-sm font-medium text-foreground">Your Progress</span>
                   <span className="text-sm text-primary font-medium">{course.progress}%</span>
                 </div>
-                <Progress value={course.progress} className="h-2" />
+                <Progress value={course.progress} className="h-0.5" />
               </div>
             )}
 

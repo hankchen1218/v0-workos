@@ -13,7 +13,7 @@ export default function WorkOSApp() {
   const viewConfig = {
     dashboard: {
       title: "Skills Dashboard",
-      subtitle: "Real-time visibility into your team's skills and gaps",
+      subtitle: "",
       component: SkillsDashboard,
     },
     upskilling: {

@@ -21,7 +21,7 @@ export function EmployeeCard({ employee, selected, onClick, onDoubleClick }: Emp
       onDoubleClick={onDoubleClick}
       className={cn(
         "flex w-full items-center gap-3 rounded-lg border p-3 text-left transition-colors",
-        selected ? "border-primary bg-primary/5" : "border-border bg-card hover:border-muted-foreground",
+        selected ? "border-muted-foreground bg-muted-foreground/5" : "border-border bg-card hover:border-muted-foreground",
       )}
     >
       <Avatar className="h-10 w-10">

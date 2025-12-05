@@ -213,7 +213,7 @@ export function SkillMatching() {
                     <span className="flex items-center gap-2">
                       <span
                         className={cn(
-                          "h-2 w-2 rounded-full",
+                          "h-1.5 w-1.5 rounded-full",
                           status === "Available" && "bg-primary",
                           status === "Busy" && "bg-amber-400",
                           status === "On Leave" && "bg-muted-foreground",
@@ -315,7 +315,7 @@ export function SkillMatching() {
       </div>
 
       {/* Matching table */}
-      <Card className="border-border bg-card overflow-hidden">
+      <Card className="border-border bg-card overflow-hidden py-0">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
@@ -428,8 +428,8 @@ export function SkillMatching() {
                             className={cn(
                               "text-sm font-medium",
                               match.matchScore >= 85 && "text-primary",
-                              match.matchScore >= 70 && match.matchScore < 85 && "text-blue-400",
-                              match.matchScore < 70 && "text-amber-400",
+                              match.matchScore >= 70 && match.matchScore < 85 && "text-blue-600",
+                              match.matchScore < 70 && "text-amber-600",
                             )}
                           >
                             {match.matchScore}%
@@ -478,12 +478,12 @@ export function SkillMatching() {
                       <td className="px-4 py-4 text-right">
                         <Button
                           size="sm"
-                          variant={match.availability === "Available" ? "default" : "outline"}
+                          variant={match.availability === "Available" ? "secondary" : "outline"}
                           disabled={match.availability === "On Leave"}
                           onClick={() => handleAssignClick(match)}
                           className={cn(
                             match.availability === "Available" &&
-                              "bg-primary text-primary-foreground hover:bg-primary/90",
+                              "",
                           )}
                         >
                           <Users className="mr-1.5 h-3.5 w-3.5" />
@@ -503,10 +503,10 @@ export function SkillMatching() {
       <div className="grid gap-4 sm:grid-cols-3">
         <Card className="border-border bg-card p-4">
           <div className="flex items-center gap-3">
-            <div className="rounded-md bg-primary/20 p-2">
+            <div className="rounded-md">
               <CheckCircle2 className="h-5 w-5 text-primary" />
             </div>
-            <div>
+            <div className="flex items-center gap-2">
               <p className="text-2xl font-semibold text-foreground">
                 {projectMatches.filter((m) => m.matchScore >= 80).length}
               </p>
@@ -516,10 +516,10 @@ export function SkillMatching() {
         </Card>
         <Card className="border-border bg-card p-4">
           <div className="flex items-center gap-3">
-            <div className="rounded-md bg-blue-500/20 p-2">
+            <div className="rounded-md">
               <Users className="h-5 w-5 text-blue-400" />
             </div>
-            <div>
+            <div className="flex items-center gap-2">
               <p className="text-2xl font-semibold text-foreground">
                 {projectMatches.filter((m) => m.availability === "Available").length}
               </p>
@@ -529,10 +529,10 @@ export function SkillMatching() {
         </Card>
         <Card className="border-border bg-card p-4">
           <div className="flex items-center gap-3">
-            <div className="rounded-md bg-amber-500/20 p-2">
-              <TrendingUp className="h-5 w-5 text-amber-400" />
+            <div className="rounded-md">
+              <TrendingUp className="h-5 w-5 text-amber-600" />
             </div>
-            <div>
+            <div className="flex items-center gap-2">
               <p className="text-2xl font-semibold text-foreground">
                 {projectMatches.filter((m) => m.growthPotential >= 80).length}
               </p>

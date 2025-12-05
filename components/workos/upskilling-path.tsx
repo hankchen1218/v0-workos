@@ -22,10 +22,10 @@ export function UpskillingPath() {
   const totalProgress = Math.round(learningPaths.reduce((acc, p) => acc + p.progress, 0) / learningPaths.length)
 
   return (
-    <div className="flex flex-col gap-6 p-6">
+    <div className="flex flex-col gap-6 p-10">
       {/* User profile header */}
-      <Card className="border-border bg-card">
-        <CardContent className="flex flex-col gap-6 p-6 md:flex-row md:items-center">
+
+        <div className="flex flex-col gap-6 md:flex-row md:items-center">
           <Avatar className="h-20 w-20">
             <AvatarImage src={currentUser.avatar || "/placeholder.svg"} />
             <AvatarFallback className="bg-primary text-primary-foreground text-xl">
@@ -42,15 +42,15 @@ export function UpskillingPath() {
             </p>
             <div className="mt-3 flex flex-wrap gap-4 text-sm">
               <div className="flex items-center gap-2 text-muted-foreground">
-                <Target className="h-4 w-4 text-primary" />
+                <Target className="h-4 w-4 text-muted-foreground" />
                 <span>{currentUser.skills.length} skills tracked</span>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
-                <Award className="h-4 w-4 text-primary" />
+                <Award className="h-4 w-4 text-muted-foreground" />
                 <span>{completedPaths.length} courses completed</span>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
-                <Clock className="h-4 w-4 text-primary" />
+                <Clock className="h-4 w-4 text-muted-foreground" />
                 <span>{inProgressPaths.length} in progress</span>
               </div>
             </div>
@@ -59,8 +59,7 @@ export function UpskillingPath() {
             <div className="text-3xl font-bold text-primary">{totalProgress}%</div>
             <p className="text-sm text-muted-foreground">Overall Progress</p>
           </div>
-        </CardContent>
-      </Card>
+        </div>
 
       {/* Main content grid */}
       <div className="grid gap-6 lg:grid-cols-3">
@@ -90,7 +89,7 @@ export function UpskillingPath() {
           {recommendedPaths.length > 0 && (
             <div>
               <div className="mb-4 flex items-center gap-2">
-                <Target className="h-5 w-5 text-amber-400" />
+                <Target className="h-5 w-5 text-amber-600" />
                 <h3 className="text-lg font-medium text-foreground">Recommended For You</h3>
               </div>
               <div className="grid gap-4 md:grid-cols-2">
@@ -125,7 +124,7 @@ export function UpskillingPath() {
         {/* Right column - Skills overview */}
         <div className="space-y-6">
           {/* Skill radar */}
-          <Card className="border-border bg-card">
+          <Card className="border-border bg-card mt-11">
             <CardHeader className="pb-2">
               <CardTitle className="text-base font-medium text-foreground">Your Skill Profile</CardTitle>
             </CardHeader>
