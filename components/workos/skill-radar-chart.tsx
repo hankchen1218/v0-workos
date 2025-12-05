@@ -15,11 +15,11 @@ export function SkillRadarChart({ skills }: SkillRadarChartProps) {
   }))
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
-      <RadarChart data={data} cx="50%" cy="50%" outerRadius="70%">
-        <PolarGrid stroke="#333" />
-        <PolarAngleAxis dataKey="skill" tick={{ fill: "#888", fontSize: 11 }} />
-        <PolarRadiusAxis angle={30} domain={[0, 100]} tick={{ fill: "#666", fontSize: 10 }} />
+    <ResponsiveContainer width="100%" height={450}>
+      <RadarChart data={data} cx="50%" cy="50%" outerRadius="80%">
+        <PolarGrid stroke="#e5e7eb" />
+        <PolarAngleAxis dataKey="skill" tick={{ fill: "#1f2937", fontSize: 14, fontWeight: 500 }} />
+        <PolarRadiusAxis angle={30} domain={[0, 100]} tick={{ fill: "#6b7280", fontSize: 11 }} />
         <Radar name="Current" dataKey="current" stroke="#10b981" fill="#10b981" fillOpacity={0.3} strokeWidth={2} />
         <Radar
           name="Target"

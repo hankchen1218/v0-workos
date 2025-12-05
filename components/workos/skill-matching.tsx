@@ -167,14 +167,14 @@ export function SkillMatching() {
                         {match.skillsMatched.slice(0, 3).map((skill) => (
                           <span
                             key={skill}
-                            className="inline-flex items-center gap-1 rounded-full bg-primary/20 px-2 py-0.5 text-xs text-primary"
+                            className="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-xs text-green-700 font-medium"
                           >
                             <CheckCircle2 className="h-3 w-3" />
                             {skill}
                           </span>
                         ))}
                         {match.skillsMissing.length > 0 && (
-                          <span className="inline-flex items-center gap-1 rounded-full bg-destructive/20 px-2 py-0.5 text-xs text-destructive-foreground">
+                          <span className="inline-flex items-center gap-1 rounded-full bg-red-100 px-2 py-0.5 text-xs text-red-700 font-medium">
                             <XCircle className="h-3 w-3" />
                             {match.skillsMissing.length} missing
                           </span>

@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { LayoutDashboard, TrendingUp, Users, Settings, ChevronLeft, ChevronRight } from "lucide-react"
+import { LayoutDashboard, TrendingUp, Users, ChevronLeft, ChevronRight, Settings } from "lucide-react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 
@@ -69,7 +69,8 @@ export function WorkOSSidebar({ activeView, onViewChange }: SidebarProps) {
       <div className="border-t border-border p-2">
         <button
           className={cn(
-            "flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-sidebar-accent hover:text-foreground",
+            "flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors",
+            "text-muted-foreground hover:bg-sidebar-accent hover:text-foreground",
           )}
         >
           <Settings className="h-5 w-5 shrink-0" />
