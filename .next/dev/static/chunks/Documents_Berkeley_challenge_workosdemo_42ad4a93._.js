@@ -1018,7 +1018,7 @@ const projectMatches = [
         employeeId: "4",
         employeeName: "Kanye West",
         role: "UX Designer",
-        matchScore: 88,
+        matchScore: 45,
         skillsMatched: [
             "Python",
             "Data Analysis",
@@ -1035,7 +1035,7 @@ const projectMatches = [
         employeeId: "3",
         employeeName: "Taylor Swift",
         role: "UX Designer",
-        matchScore: 78,
+        matchScore: 85,
         skillsMatched: [
             "Figma",
             "User Research",
@@ -1046,7 +1046,7 @@ const projectMatches = [
             "TypeScript"
         ],
         availability: "Available",
-        growthPotential: 70
+        growthPotential: 91
     },
     {
         employeeId: "2",
