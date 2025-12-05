@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import type { LearningPath } from "@/lib/workos-data"
-import { Clock, BookOpen, Award, CheckCircle2, Play, Users, Star } from "lucide-react"
+import { Clock, BookOpen, Award, CheckCircle2, Play, Users, Star, X } from "lucide-react"
 
 interface CourseDetailModalProps {
   course: LearningPath | null
@@ -39,9 +39,16 @@ export function CourseDetailModal({ course, open, onClose, onEnroll }: CourseDet
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl bg-card border-border">
+      <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto bg-card border-border">
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 p-1 rounded-full hover:bg-secondary transition-colors z-10"
+        >
+          <X className="h-5 w-5 text-muted-foreground" />
+        </button>
+
         <DialogHeader>
-          <DialogTitle className="text-foreground">Course Details</DialogTitle>
+          <DialogTitle className="text-foreground pr-8">Course Details</DialogTitle>
         </DialogHeader>
 
         {enrolled ? (
@@ -57,7 +64,7 @@ export function CourseDetailModal({ course, open, onClose, onEnroll }: CourseDet
             {/* Course Header */}
             <div className="pb-4 border-b border-border">
               <div className="flex items-start justify-between">
-                <div>
+                <div className="pr-4">
                   <h3 className="text-xl font-semibold text-foreground mb-2">{course.title}</h3>
                   <p className="text-muted-foreground">{course.description}</p>
                 </div>
@@ -75,7 +82,7 @@ export function CourseDetailModal({ course, open, onClose, onEnroll }: CourseDet
                 </Badge>
               </div>
 
-              <div className="flex items-center gap-6 mt-4 text-sm text-muted-foreground">
+              <div className="flex items-center gap-6 mt-4 text-sm text-muted-foreground flex-wrap">
                 <span className="flex items-center gap-1.5">
                   <Clock className="h-4 w-4" />
                   {course.duration}
