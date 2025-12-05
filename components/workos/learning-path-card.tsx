@@ -10,11 +10,15 @@ interface LearningPathCardProps {
   path: LearningPath
   onStart?: () => void
   onContinue?: () => void
+  onClick?: () => void
 }
 
-export function LearningPathCard({ path, onStart, onContinue }: LearningPathCardProps) {
+export function LearningPathCard({ path, onStart, onContinue, onClick }: LearningPathCardProps) {
   return (
-    <Card className="border-border bg-card overflow-hidden">
+    <Card
+      className="border-border bg-card overflow-hidden cursor-pointer hover:border-primary/50 transition-colors"
+      onClick={onClick}
+    >
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1">
@@ -73,13 +77,22 @@ export function LearningPathCard({ path, onStart, onContinue }: LearningPathCard
             <span>Course completed</span>
           </div>
         ) : path.status === "In Progress" ? (
-          <Button onClick={onContinue} className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+          <Button
+            onClick={(e) => {
+              e.stopPropagation()
+              onContinue?.()
+            }}
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+          >
             <Play className="mr-2 h-4 w-4" />
             Continue Learning
           </Button>
         ) : (
           <Button
-            onClick={onStart}
+            onClick={(e) => {
+              e.stopPropagation()
+              onStart?.()
+            }}
             variant="outline"
             className="w-full border-border text-foreground hover:bg-secondary bg-transparent"
           >

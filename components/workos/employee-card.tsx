@@ -9,14 +9,16 @@ interface EmployeeCardProps {
   employee: Employee
   selected?: boolean
   onClick?: () => void
+  onDoubleClick?: () => void
 }
 
-export function EmployeeCard({ employee, selected, onClick }: EmployeeCardProps) {
+export function EmployeeCard({ employee, selected, onClick, onDoubleClick }: EmployeeCardProps) {
   const avgProficiency = Math.round(employee.skills.reduce((acc, s) => acc + s.proficiency, 0) / employee.skills.length)
 
   return (
     <button
       onClick={onClick}
+      onDoubleClick={onDoubleClick}
       className={cn(
         "flex w-full items-center gap-3 rounded-lg border p-3 text-left transition-colors",
         selected ? "border-primary bg-primary/10" : "border-border bg-card hover:border-muted-foreground",

@@ -2,15 +2,19 @@
 
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { employees, skillGaps, teamStats } from "@/lib/workos-data"
+import { employees, skillGaps, teamStats, type Employee, type SkillGap } from "@/lib/workos-data"
 import { StatCard } from "./stat-card"
 import { SkillRadarChart } from "./skill-radar-chart"
 import { SkillGapBar } from "./skill-gap-bar"
 import { EmployeeCard } from "./employee-card"
+import { EmployeeDetailModal } from "./employee-detail-modal"
+import { SkillGapModal } from "./skill-gap-modal"
 import { Users, Award, TrendingUp, BookOpen } from "lucide-react"
 
 export function SkillsDashboard() {
   const [selectedEmployee, setSelectedEmployee] = useState(employees[0])
+  const [detailEmployee, setDetailEmployee] = useState<Employee | null>(null)
+  const [selectedGap, setSelectedGap] = useState<SkillGap | null>(null)
 
   return (
     <div className="flex flex-col gap-6 p-6">
@@ -56,8 +60,10 @@ export function SkillsDashboard() {
                 employee={employee}
                 selected={selectedEmployee.id === employee.id}
                 onClick={() => setSelectedEmployee(employee)}
+                onDoubleClick={() => setDetailEmployee(employee)}
               />
             ))}
+            <p className="text-xs text-muted-foreground text-center pt-2">Double-click to view full profile</p>
           </CardContent>
         </Card>
 
@@ -90,20 +96,23 @@ export function SkillsDashboard() {
       <Card className="border-border bg-card">
         <CardHeader className="pb-3">
           <CardTitle className="text-base font-medium text-foreground">Team Skill Gaps</CardTitle>
-          <p className="text-sm text-muted-foreground">Priority areas where the team needs development</p>
+          <p className="text-sm text-muted-foreground">Click on a skill gap to see recommendations</p>
         </CardHeader>
         <CardContent className="space-y-6">
           {skillGaps.map((gap) => (
-            <SkillGapBar
+            <div
               key={gap.skill}
-              skill={gap.skill}
-              current={gap.current}
-              required={gap.required}
-              priority={gap.priority}
-            />
+              onClick={() => setSelectedGap(gap)}
+              className="cursor-pointer hover:opacity-80 transition-opacity"
+            >
+              <SkillGapBar skill={gap.skill} current={gap.current} required={gap.required} priority={gap.priority} />
+            </div>
           ))}
         </CardContent>
       </Card>
+
+      <EmployeeDetailModal employee={detailEmployee} open={!!detailEmployee} onClose={() => setDetailEmployee(null)} />
+      <SkillGapModal skillGap={selectedGap} open={!!selectedGap} onClose={() => setSelectedGap(null)} />
     </div>
   )
 }

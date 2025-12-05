@@ -1,16 +1,19 @@
 "use client"
 
+import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { employees, learningPaths } from "@/lib/workos-data"
+import { employees, learningPaths, type LearningPath } from "@/lib/workos-data"
 import { LearningPathCard } from "./learning-path-card"
 import { SkillProgressItem } from "./skill-progress-item"
 import { SkillRadarChart } from "./skill-radar-chart"
+import { CourseDetailModal } from "./course-detail-modal"
 import { Target, Award, Clock, TrendingUp } from "lucide-react"
 
 export function UpskillingPath() {
   // Using the first employee as the "current user" for the prototype
   const currentUser = employees[0]
+  const [selectedCourse, setSelectedCourse] = useState<LearningPath | null>(null)
 
   const inProgressPaths = learningPaths.filter((p) => p.status === "In Progress")
   const recommendedPaths = learningPaths.filter((p) => p.status === "Not Started")
@@ -72,7 +75,12 @@ export function UpskillingPath() {
               </div>
               <div className="grid gap-4 md:grid-cols-2">
                 {inProgressPaths.map((path) => (
-                  <LearningPathCard key={path.id} path={path} />
+                  <LearningPathCard
+                    key={path.id}
+                    path={path}
+                    onClick={() => setSelectedCourse(path)}
+                    onContinue={() => setSelectedCourse(path)}
+                  />
                 ))}
               </div>
             </div>
@@ -87,7 +95,12 @@ export function UpskillingPath() {
               </div>
               <div className="grid gap-4 md:grid-cols-2">
                 {recommendedPaths.map((path) => (
-                  <LearningPathCard key={path.id} path={path} />
+                  <LearningPathCard
+                    key={path.id}
+                    path={path}
+                    onClick={() => setSelectedCourse(path)}
+                    onStart={() => setSelectedCourse(path)}
+                  />
                 ))}
               </div>
             </div>
@@ -102,7 +115,7 @@ export function UpskillingPath() {
               </div>
               <div className="grid gap-4 md:grid-cols-2">
                 {completedPaths.map((path) => (
-                  <LearningPathCard key={path.id} path={path} />
+                  <LearningPathCard key={path.id} path={path} onClick={() => setSelectedCourse(path)} />
                 ))}
               </div>
             </div>
@@ -144,6 +157,8 @@ export function UpskillingPath() {
           </Card>
         </div>
       </div>
+
+      <CourseDetailModal course={selectedCourse} open={!!selectedCourse} onClose={() => setSelectedCourse(null)} />
     </div>
   )
 }
