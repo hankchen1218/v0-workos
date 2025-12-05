@@ -7,6 +7,7 @@ import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import type { LearningPath } from "@/lib/workos-data"
 import { Clock, BookOpen, Award, CheckCircle2, Play, Users, Star, X } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface CourseDetailModalProps {
   course: LearningPath | null
@@ -40,13 +41,6 @@ export function CourseDetailModal({ course, open, onClose, onEnroll }: CourseDet
   return (
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto bg-card border-border">
-        <button
-          onClick={onClose}
-          className="absolute right-4 top-4 p-1 rounded-full hover:bg-secondary transition-colors z-10"
-        >
-          <X className="h-5 w-5 text-muted-foreground" />
-        </button>
-
         <DialogHeader>
           <DialogTitle className="text-foreground pr-8">Course Details</DialogTitle>
         </DialogHeader>
@@ -70,14 +64,16 @@ export function CourseDetailModal({ course, open, onClose, onEnroll }: CourseDet
                 </div>
                 <Badge
                   variant="outline"
-                  className={
-                    course.status === "Completed"
-                      ? "bg-primary/10 text-primary border-primary/20"
-                      : course.status === "In Progress"
-                        ? "bg-blue-500/10 text-blue-500 border-blue-500/20"
-                        : "bg-amber-500/10 text-amber-500 border-amber-500/20"
-                  }
+                  className="gap-1.5 font-normal text-muted-foreground"
                 >
+                  <div
+                    className={cn(
+                      "size-2 rounded-full",
+                      course.status === "Completed" && "bg-green-500",
+                      course.status === "In Progress" && "bg-blue-500",
+                      course.status === "Not Started" && "bg-muted-foreground",
+                    )}
+                  />
                   {course.status}
                 </Badge>
               </div>
@@ -146,7 +142,7 @@ export function CourseDetailModal({ course, open, onClose, onEnroll }: CourseDet
               </h4>
               <div className="flex flex-wrap gap-2">
                 {["Problem Solving", "Technical Design", "Best Practices", "Code Review"].map((skill) => (
-                  <Badge key={skill} variant="secondary" className="bg-secondary text-foreground">
+                  <Badge key={skill} variant="outline" className="text-muted-foreground">
                     {skill}
                   </Badge>
                 ))}

@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import { Badge } from "@/components/ui/badge"
 
 interface SkillGapBarProps {
   skill: string
@@ -15,24 +16,17 @@ export function SkillGapBar({ skill, current, required, priority }: SkillGapBarP
       <div className="flex items-center justify-between text-sm">
         <span className="text-foreground">{skill}</span>
         <div className="flex items-center gap-2">
-          <span
-            className={cn(
-              "flex items-center rounded-full px-2 py-0.5 text-xs",
-              priority === "High" && "border text-muted-foreground",
-              priority === "Medium" && "border text-muted-foreground",
-              priority === "Low" && "border text-muted-foreground",
-            )}
-          >
+          <Badge variant="outline" className="gap-1.5 text-xs font-normal text-muted-foreground">
             <div
               className={cn(
-                "mr-1.5 size-1 rounded-full",
+                "size-1 rounded-full",
                 priority === "High" && "bg-red-500",
                 priority === "Medium" && "bg-yellow-500",
                 priority === "Low" && "bg-blue-500",
               )}
             />
             {priority}
-          </span>
+          </Badge>
           <span className="text-muted-foreground">Gap: {gap}%</span>
         </div>
       </div>

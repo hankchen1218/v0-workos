@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import { Badge } from "@/components/ui/badge"
 import { TrendingUp, TrendingDown, Minus } from "lucide-react"
 import type { Skill } from "@/lib/workos-data"
 
@@ -15,17 +16,9 @@ export function SkillProgressItem({ skill }: SkillProgressItemProps) {
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-2">
             <span className="font-medium text-foreground">{skill.name}</span>
-            <span
-              className={cn(
-                "rounded-full px-2 py-0.5 text-xs",
-                skill.category === "Technical" && "border text-muted-foreground",
-                skill.category === "Soft" && "border text-muted-foreground",
-                skill.category === "Leadership" && "border text-muted-foreground",
-                skill.category === "Domain" && "border text-muted-foreground",
-              )}
-            >
+            <Badge variant="outline" className="text-xs text-muted-foreground">
               {skill.category}
-            </span>
+            </Badge>
           </div>
           <div className="flex items-center gap-1">
             {skill.trend === "up" && <TrendingUp className="h-4 w-4 text-primary" />}

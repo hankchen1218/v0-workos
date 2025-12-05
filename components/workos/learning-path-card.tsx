@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
 import { Clock, CheckCircle2, Play, BookOpen } from "lucide-react"
 import type { LearningPath } from "@/lib/workos-data"
@@ -24,21 +25,17 @@ export function LearningPathCard({ path, onStart, onContinue, onClick }: Learnin
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1">
               <h3 className="font-medium text-foreground">{path.title}</h3>
-              <span
-                className={cn(
-                  "flex items-center rounded-full border px-2 py-0.5 text-xs text-muted-foreground",
-                )}
-              >
+              <Badge variant="outline" className="gap-1.5 text-xs font-normal text-muted-foreground">
                 <div
                   className={cn(
-                    "mr-1.5 size-1.5 rounded-full",
+                    "size-1.5 rounded-full",
                     path.status === "Completed" && "bg-green-500",
                     path.status === "In Progress" && "bg-blue-500",
                     path.status === "Not Started" && "bg-muted-foreground",
                   )}
                 />
                 {path.status}
-              </span>
+              </Badge>
             </div>
             <p className="text-sm text-muted-foreground">{path.description}</p>
           </div>
@@ -52,9 +49,9 @@ export function LearningPathCard({ path, onStart, onContinue, onClick }: Learnin
         {/* Skills tags */}
         <div className="flex flex-wrap gap-2">
           {path.skills.map((skill) => (
-            <span key={skill} className="rounded-md bg-secondary px-2 py-1 text-xs text-secondary-foreground">
+            <Badge key={skill} variant="outline" className="text-xs text-muted-foreground">
               {skill}
-            </span>
+            </Badge>
           ))}
         </div>
 

@@ -6,6 +6,7 @@ import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { type SkillGap, employees, learningPaths } from "@/lib/workos-data"
 import { TrendingUp, Users, BookOpen, AlertTriangle, Target } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface SkillGapModalProps {
   skillGap: SkillGap | null
@@ -42,16 +43,16 @@ export function SkillGapModal({ skillGap, open, onClose }: SkillGapModalProps) {
           <div className="flex items-start justify-between">
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-2">{skillGap.skill}</h3>
-              <Badge
-                variant="outline"
-                className={
-                  skillGap.priority === "Critical"
-                    ? "bg-red-500/10 text-red-500 border-red-500/20"
-                    : skillGap.priority === "High"
-                      ? "bg-amber-500/10 text-amber-500 border-amber-500/20"
-                      : "bg-blue-500/10 text-blue-500 border-blue-500/20"
-                }
-              >
+              <Badge variant="outline" className="gap-1.5 font-normal text-muted-foreground">
+                <div
+                  className={cn(
+                    "size-2 rounded-full",
+                    skillGap.priority === "Critical" && "bg-red-500",
+                    skillGap.priority === "High" && "bg-amber-500",
+                    skillGap.priority === "Medium" && "bg-yellow-500",
+                    skillGap.priority === "Low" && "bg-blue-500",
+                  )}
+                />
                 {skillGap.priority} Priority
               </Badge>
             </div>

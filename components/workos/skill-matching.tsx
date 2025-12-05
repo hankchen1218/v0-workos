@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils"
 import { employees, projectMatches } from "@/lib/workos-data"
 import { AssignModal } from "./assign-modal"
 import { Search, Filter, ArrowUpDown, CheckCircle2, XCircle, TrendingUp, Users, X } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -136,9 +137,9 @@ export function SkillMatching() {
         <CardContent>
           <div className="flex flex-wrap gap-2">
             {["React", "TypeScript", "GraphQL", "Problem Solving", "Communication"].map((skill) => (
-              <span key={skill} className="rounded-md border  px-3 py-1.5 text-sm text-muted-foreground">
+              <Badge key={skill} variant="outline" className="text-sm text-muted-foreground">
                 {skill}
-              </span>
+              </Badge>
             ))}
           </div>
         </CardContent>
@@ -276,34 +277,46 @@ export function SkillMatching() {
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-sm text-muted-foreground">Active filters:</span>
             {selectedSkills.map((skill) => (
-              <span
+              <Badge
                 key={skill}
-                className="inline-flex items-center gap-1 rounded-full bg-primary/20 px-2.5 py-1 text-xs font-medium text-primary"
+                variant="outline"
+                className="gap-1 text-xs font-normal text-muted-foreground"
               >
+                <Filter className="h-3 w-3 text-primary" />
                 {skill}
-                <button onClick={() => toggleSkill(skill)} className="hover:text-primary/70">
+                <button onClick={() => toggleSkill(skill)} className="hover:text-foreground">
                   <X className="h-3 w-3" />
                 </button>
-              </span>
+              </Badge>
             ))}
             {availabilityFilter.map((status) => (
-              <span
+              <Badge
                 key={status}
-                className="inline-flex items-center gap-1 rounded-full bg-blue-100 px-2.5 py-1 text-xs font-medium text-blue-700"
+                variant="outline"
+                className="gap-1 text-xs font-normal text-muted-foreground"
               >
+                <div
+                  className={cn(
+                    "h-1.5 w-1.5 rounded-full",
+                    status === "Available" && "bg-green-500",
+                    status === "Busy" && "bg-orange-500",
+                    status === "On Leave" && "bg-red-500",
+                  )}
+                />
                 {status}
-                <button onClick={() => toggleAvailability(status)} className="hover:text-blue-500">
+                <button onClick={() => toggleAvailability(status)} className="hover:text-foreground">
                   <X className="h-3 w-3" />
                 </button>
-              </span>
+              </Badge>
             ))}
             {minMatchScore > 0 && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2.5 py-1 text-xs font-medium text-amber-700">
+              <Badge variant="outline" className="gap-1 text-xs font-normal text-muted-foreground">
+                <TrendingUp className="h-3 w-3 text-primary" />
                 {minMatchScore}%+ match
-                <button onClick={() => setMinMatchScore(0)} className="hover:text-amber-500">
+                <button onClick={() => setMinMatchScore(0)} className="hover:text-foreground">
                   <X className="h-3 w-3" />
                 </button>
-              </span>
+              </Badge>
             )}
           </div>
         )}
@@ -393,19 +406,20 @@ export function SkillMatching() {
                       <td className="px-4 py-4">
                         <div className="flex flex-wrap gap-1.5">
                           {match.skillsMatched.slice(0, 3).map((skill) => (
-                            <span
+                            <Badge
                               key={skill}
-                              className="border inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs text-muted-foreground font-medium"
+                              variant="outline"
+                              className="gap-1 text-xs font-normal text-muted-foreground"
                             >
                               <CheckCircle2 className="h-3 w-3 text-green-500" />
                               {skill}
-                            </span>
+                            </Badge>
                           ))}
                           {match.skillsMissing.length > 0 && (
-                            <span className="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs text-muted-foreground font-medium">
+                            <Badge variant="outline" className="gap-1 text-xs font-normal text-muted-foreground">
                               <XCircle className="h-3 w-3 text-red-500" />
                               {match.skillsMissing.length} missing
-                            </span>
+                            </Badge>
                           )}
                         </div>
                       </td>
@@ -454,24 +468,17 @@ export function SkillMatching() {
 
                       {/* Availability */}
                       <td className="px-4 py-4">
-                        <span
-                          className={cn(
-                            "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium",
-                            match.availability === "Available" && "border text-muted-foreground",
-                            match.availability === "Busy" && "border text-muted-foreground",
-                            match.availability === "On Leave" && "border text-muted-foreground",
-                          )}
-                        >
-                          <span
+                        <Badge variant="outline" className="gap-1.5 text-xs font-normal text-muted-foreground">
+                          <div
                             className={cn(
                               "h-1.5 w-1.5 rounded-full",
-                              match.availability === "Available" && "bg-primary",
-                              match.availability === "Busy" && "bg-amber-400",
-                              match.availability === "On Leave" && "bg-muted-foreground",
+                              match.availability === "Available" && "bg-green-500",
+                              match.availability === "Busy" && "bg-orange-500",
+                              match.availability === "On Leave" && "bg-red-500",
                             )}
                           />
                           {match.availability}
-                        </span>
+                        </Badge>
                       </td>
 
                       {/* Action */}

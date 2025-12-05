@@ -34,6 +34,7 @@ export interface LearningPath {
   skills: string[]
   progress: number
   status: "Not Started" | "In Progress" | "Completed"
+  difficulty: "Beginner" | "Intermediate" | "Advanced"
 }
 
 export interface ProjectMatch {
@@ -150,6 +151,7 @@ export const learningPaths: LearningPath[] = [
     skills: ["React", "TypeScript", "Performance"],
     progress: 65,
     status: "In Progress",
+    difficulty: "Advanced",
   },
   {
     id: "2",
@@ -159,6 +161,7 @@ export const learningPaths: LearningPath[] = [
     skills: ["Team Leadership", "Communication", "Stakeholder Management"],
     progress: 30,
     status: "In Progress",
+    difficulty: "Intermediate",
   },
   {
     id: "3",
@@ -168,6 +171,7 @@ export const learningPaths: LearningPath[] = [
     skills: ["AWS", "Cloud Architecture", "DevOps"],
     progress: 0,
     status: "Not Started",
+    difficulty: "Advanced",
   },
   {
     id: "4",
@@ -177,6 +181,7 @@ export const learningPaths: LearningPath[] = [
     skills: ["Python", "Machine Learning", "Data Analysis"],
     progress: 100,
     status: "Completed",
+    difficulty: "Beginner",
   },
 ]
 
@@ -195,7 +200,7 @@ export const projectMatches: ProjectMatch[] = [
   {
     employeeId: "4",
     employeeName: "Kanye West",
-    role: "Data Scientist",
+    role: "UX Designer",
     matchScore: 88,
     skillsMatched: ["Python", "Data Analysis", "Problem Solving"],
     skillsMissing: ["React", "TypeScript"],

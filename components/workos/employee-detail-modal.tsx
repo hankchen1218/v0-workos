@@ -28,9 +28,6 @@ export function EmployeeDetailModal({ employee, open, onClose }: EmployeeDetailM
         <DialogHeader className="p-6 pb-2">
           <DialogTitle className="flex items-center justify-between">
             <span>Employee Profile</span>
-            <Button variant="ghost" size="icon" className="h-8 w-8" onClick={onClose}>
-              <span className="sr-only">Close</span>
-            </Button>
           </DialogTitle>
         </DialogHeader>
 

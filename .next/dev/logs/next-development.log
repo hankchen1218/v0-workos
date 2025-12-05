@@ -1,134 +1,48 @@
-[00:00:00.835] Server  WARN     ⚠ Minimum recommended TypeScript version is v5.1.0, older versions can potentially be incompatible with Next.js. Detected: 5.0.2
-[00:00:00.938] Server  LOG      ✓ Ready in 662ms
-[00:00:03.008] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3001". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[00:00:03.286] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:03.413] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:03.413] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:03.413] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764959357400}
-[00:00:08.380] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:08.483] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:08.483] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:08.483] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764959362469}
-[00:00:20.119] Server  LOG      ✓ Compiled in 57ms
-[00:03:12.517] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:03:12.517] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:04:40.365] Server  LOG      ✓ Compiled in 49ms
-[00:04:41.558] Server  LOG      ✓ Compiled in 39ms
-[00:04:42.588] Server  LOG      ✓ Compiled in 44ms
-[00:04:44.106] Server  LOG      ✓ Compiled in 70ms
-[00:05:33.036] Server  LOG      ✓ Compiled in 40ms
-[00:05:35.305] Server  LOG      ✓ Compiled in 34ms
-[00:05:39.350] Server  LOG      ✓ Compiled in 39ms
-[00:05:41.022] Server  LOG      ✓ Compiled in 41ms
-[00:05:44.727] Server  LOG      ✓ Compiled in 30ms
-[00:05:49.244] Server  LOG      ✓ Compiled in 29ms
-[00:06:45.282] Server  LOG      ✓ Compiled in 96ms
-[00:06:45.377] Browser ERROR   Received `%s` for a non-boolean attribute `%s`.
-
-If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}. true flex flex true flex
-[00:06:48.924] Server  LOG      ✓ Compiled in 47ms
-[00:06:51.364] Server  LOG      ✓ Compiled in 52ms
-[00:06:53.511] Server  LOG      ✓ Compiled in 47ms
-[00:07:00.353] Server  LOG      ✓ Compiled in 31ms
-[00:07:04.751] Server  LOG      ✓ Compiled in 41ms
-[00:07:09.705] Server  LOG      ✓ Compiled in 44ms
-[00:07:36.277] Server  LOG      ✓ Compiled in 40ms
-[00:07:37.983] Server  LOG      ✓ Compiled in 34ms
-[00:07:45.424] Server  LOG      ✓ Compiled in 29ms
-[00:07:47.225] Server  LOG      ✓ Compiled in 33ms
-[00:07:48.351] Server  LOG      ✓ Compiled in 41ms
-[00:07:59.723] Server  LOG      ✓ Compiled in 34ms
-[00:08:04.110] Server  LOG      ✓ Compiled in 31ms
-[00:08:08.237] Server  LOG      ✓ Compiled in 40ms
-[00:08:37.846] Server  LOG      ✓ Compiled in 29ms
-[00:08:39.038] Server  LOG      ✓ Compiled in 52ms
-[00:08:57.208] Server  LOG      ✓ Compiled in 57ms
-[00:09:07.423] Server  LOG      ✓ Compiled in 35ms
-[00:09:09.722] Server  LOG      ✓ Compiled in 39ms
-[00:09:13.430] Server  LOG      ✓ Compiled in 45ms
-[00:09:44.753] Server  LOG      ✓ Compiled in 42ms
-[00:09:46.302] Server  LOG      ✓ Compiled in 60ms
-[00:10:07.561] Server  LOG      ✓ Compiled in 121ms
-[00:10:08.559] Server  LOG      ✓ Compiled in 38ms
-[00:10:09.579] Server  LOG      ✓ Compiled in 30ms
-[00:10:18.760] Server  LOG      ✓ Compiled in 115ms
-[00:10:30.078] Server  LOG      ✓ Compiled in 29ms
-[00:11:18.450] Server  LOG      ✓ Compiled in 45ms
-[00:11:18.603] Browser ERROR   ./Documents/Berkeley/challenge/workosdemo/components/workos/upskilling-path.tsx:162:1
-Parsing ecmascript source code failed
-  160 |     </div>
-  161 |   )
-> 162 | }
-      | ^
-  163 |
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import traces:
-  Client Component Browser:
-    ./Documents/Berkeley/challenge/workosdemo/components/workos/upskilling-path.tsx [Client Component Browser]
-    ./Documents/Berkeley/challenge/workosdemo/app/page.tsx [Client Component Browser]
-    ./Documents/Berkeley/challenge/workosdemo/app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./Documents/Berkeley/challenge/workosdemo/components/workos/upskilling-path.tsx [Client Component SSR]
-    ./Documents/Berkeley/challenge/workosdemo/app/page.tsx [Client Component SSR]
-    ./Documents/Berkeley/challenge/workosdemo/app/page.tsx [Server Component]
-[00:11:23.905] Browser ERROR   ./Documents/Berkeley/challenge/workosdemo/components/workos/upskilling-path.tsx:162:1
-Parsing ecmascript source code failed
-  160 |     </div>
-  161 |   )
-> 162 | }
-      | ^
-  163 |
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import traces:
-  Client Component Browser:
-    ./Documents/Berkeley/challenge/workosdemo/components/workos/upskilling-path.tsx [Client Component Browser]
-    ./Documents/Berkeley/challenge/workosdemo/app/page.tsx [Client Component Browser]
-    ./Documents/Berkeley/challenge/workosdemo/app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./Documents/Berkeley/challenge/workosdemo/components/workos/upskilling-path.tsx [Client Component SSR]
-    ./Documents/Berkeley/challenge/workosdemo/app/page.tsx [Client Component SSR]
-    ./Documents/Berkeley/challenge/workosdemo/app/page.tsx [Server Component]
-[00:11:25.377] Browser ERROR   ./Documents/Berkeley/challenge/workosdemo/components/workos/upskilling-path.tsx:162:1
-Parsing ecmascript source code failed
-  160 |     </div>
-  161 |   )
-> 162 | }
-      | ^
-  163 |
-
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-
-Import traces:
-  Client Component Browser:
-    ./Documents/Berkeley/challenge/workosdemo/components/workos/upskilling-path.tsx [Client Component Browser]
-    ./Documents/Berkeley/challenge/workosdemo/app/page.tsx [Client Component Browser]
-    ./Documents/Berkeley/challenge/workosdemo/app/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./Documents/Berkeley/challenge/workosdemo/components/workos/upskilling-path.tsx [Client Component SSR]
-    ./Documents/Berkeley/challenge/workosdemo/app/page.tsx [Client Component SSR]
-    ./Documents/Berkeley/challenge/workosdemo/app/page.tsx [Server Component]
-[00:11:28.388] Server  LOG      ✓ Compiled in 32ms
-[00:11:28.481] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3001". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[00:12:09.599] Server  LOG      ✓ Compiled in 61ms
-[00:12:12.727] Server  LOG      ✓ Compiled in 62ms
-[00:12:38.847] Server  LOG      ✓ Compiled in 38ms
-[00:12:41.603] Server  LOG      ✓ Compiled in 41ms
-[00:13:06.163] Server  LOG      ✓ Compiled in 36ms
-[00:13:12.599] Server  LOG      ✓ Compiled in 36ms
-[00:13:21.893] Server  LOG      ✓ Compiled in 46ms
-[00:13:27.202] Server  LOG      ✓ Compiled in 34ms
-[00:13:29.905] Server  LOG      ✓ Compiled in 34ms
-[00:13:34.765] Server  LOG      ✓ Compiled in 33ms
-[00:13:36.066] Server  LOG      ✓ Compiled in 59ms
-[00:13:38.387] Server  LOG      ✓ Compiled in 26ms
-[00:13:39.790] Server  LOG      ✓ Compiled in 45ms
-[00:13:45.874] Server  LOG      ✓ Compiled in 45ms
-[00:13:48.406] Server  LOG      ✓ Compiled in 51ms
-[00:13:55.211] Server  LOG      ✓ Compiled in 28ms
+[00:00:01.006] Server  WARN     ⚠ Minimum recommended TypeScript version is v5.1.0, older versions can potentially be incompatible with Next.js. Detected: 5.0.2
+[00:00:01.096] Server  LOG      ✓ Ready in 601ms
+[00:00:07.357] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3001". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:00:07.662] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:07.877] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:07.878] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:07.878] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764960229053}
+[00:00:32.965] Server  LOG      ✓ Compiled in 57ms
+[00:00:44.868] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:00:44.869] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:00:46.916] Server  LOG      ✓ Compiled in 41ms
+[00:00:47.006] Browser ERROR   uncaughtError: ReferenceError: cn is not defined
+[00:01:05.744] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:01:05.847] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3001". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:01:05.849] Server  LOG      ✓ Compiled in 40ms
+[00:01:06.006] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764960287053}
+[00:01:06.164] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:06.303] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:01:06.303] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:01:06.303] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764960287494}
+[00:01:10.896] Server  LOG      ✓ Compiled in 34ms
+[00:01:18.631] Server  LOG      ✓ Compiled in 64ms
+[00:01:57.224] Server  LOG      ✓ Compiled in 56ms
+[00:01:57.828] Server  LOG      ✓ Compiled in 95ms
+[00:02:33.614] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:02:33.614] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:03:44.353] Server  LOG      ✓ Compiled in 43ms
+[00:03:47.323] Server  LOG      ✓ Compiled in 219ms
+[00:03:47.871] Server  LOG      ✓ Compiled in 44ms
+[00:03:48.589] Server  LOG      ✓ Compiled in 45ms
+[00:03:50.099] Server  LOG      ✓ Compiled in 119ms
+[00:03:51.213] Server  LOG      ✓ Compiled in 32ms
+[00:03:52.473] Server  LOG      ✓ Compiled in 31ms
+[00:03:53.236] Server  LOG      ✓ Compiled in 37ms
+[00:03:53.953] Server  LOG      ✓ Compiled in 39ms
+[00:03:54.638] Server  LOG      ✓ Compiled in 40ms
+[00:03:55.343] Server  LOG      ✓ Compiled in 35ms
+[00:03:56.178] Server  LOG      ✓ Compiled in 30ms
+[00:03:56.903] Server  LOG      ✓ Compiled in 34ms
+[00:04:02.581] Server  LOG      ✓ Compiled in 51ms
+[00:04:03.554] Server  LOG      ✓ Compiled in 31ms
+[00:04:04.186] Server  LOG      ✓ Compiled in 28ms
+[00:04:04.853] Server  LOG      ✓ Compiled in 75ms
+[00:04:49.105] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:04:49.105] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:04:59.400] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:04:59.400] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:06:30.688] Server  LOG      ✓ Compiled in 31ms
